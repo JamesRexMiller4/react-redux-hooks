@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
-import Form from './components/Form/Form';
+import FormBar from './components/Form/Form';
 import ToDoContainer from './components/ToDoContainer/ToDoContainer'
 
 class App extends Component {
@@ -22,7 +23,7 @@ class App extends Component {
     return (
       <body className="App">
         <Header />
-        <Form updateTodo={this.updateTodo}/>
+        <FormBar updateTodo={this.updateTodo}/>
         <ToDoContainer todos={this.state.todos}/>
       </body>
     );

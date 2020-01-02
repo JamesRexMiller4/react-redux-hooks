@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import './Form.scss';
+import Button from 'react-bootstrap/Button';
 
 class Form extends Component {
   constructor(props) {
@@ -23,10 +25,10 @@ class Form extends Component {
 
   render() {
     return(
-      <form>
-        <input id='input' type='text' name='todo' placeholder='Enter new ToDo' onChange={this.handleChange}>
+      <form className='form'>
+        <input id='input' className='todo-input' type='text' name='todo' placeholder='Enter new ToDo' onChange={this.handleChange}>
         </input>
-        <button id='button' type='button' onClick={(e) => this.handleSubmit(e)}>➤</button>
+        <Button id='button' variant='primary' type='button' onClick={(e) => this.handleSubmit(e)}>➤</Button>
       </form>
     )
   }
