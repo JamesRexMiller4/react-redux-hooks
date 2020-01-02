@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { addTodo } from '../../actions/index';
+import { connect } from 'react-redux';
 import './Form.scss';
 import Button from 'react-bootstrap/Button';
 
@@ -21,7 +23,7 @@ class Form extends Component {
   handleSubmit = (e) => {
     if (e.target.id === 'button') {
       let todo = {title: this.state.todo, id: this.generateRandomInt()}
-      this.props.updateTodo(todo);
+      this.props.addTodo(todo);
       e.target.parentNode.reset();
     }
   }
@@ -31,7 +33,7 @@ class Form extends Component {
     return(
       <form className='form'>
         <input id='input' className='todo-input' type='text' name='todo' 
-        placeholder='Enter new ToDo' onChange={this.handleChange}></input>
+        placeholder='Enter new ToDo' autocomplete='off' onChange={this.handleChange}></input>
         <Button id='button' variant='primary' type='button' 
         onClick={(e) => this.handleSubmit(e)}>➤</Button>
       </form>
@@ -39,4 +41,12 @@ class Form extends Component {
   }
 }
 
-export default Form;
+const mapDispatchToProps = (dispatch) => ({
+  addTodo: todo => dispatch( addTodo(todo) )
+})
+
+const mapStateToProps = () => {
+  
+}
+
+export default connect(null, mapDispatchToProps)(Form);

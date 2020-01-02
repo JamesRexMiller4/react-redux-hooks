@@ -1,5 +1,6 @@
 import React from 'react';
-import ToDoItem from '../ToDoItem/ToDoItem';
+import ToDoItem from '../../components/ToDoItem/ToDoItem';
+import { connect } from 'react-redux';
 import './ToDoContainer.scss';
 
 const ToDoContainer = ({todos, removeTodo}) => {
@@ -18,4 +19,8 @@ const ToDoContainer = ({todos, removeTodo}) => {
   )
 }
 
-export default ToDoContainer;
+const mapStateToProps = (state) => ({
+  todos: state.todos
+})
+
+export default connect(mapStateToProps)(ToDoContainer);

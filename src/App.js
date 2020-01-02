@@ -1,46 +1,18 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
-import FormBar from './components/Form/Form';
-import ToDoContainer from './components/ToDoContainer/ToDoContainer'
+import FormBar from './containers/Form/Form';
+import ToDoContainer from './containers/ToDoContainer/ToDoContainer'
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      todos: [
-        {title:'Buy Groceries', id: 1},
-        {title:'Practice React', id:2},
-        {title:'Drink more Coffee', id:3}]
-    }
-  }
-
-  updateTodo = (todo) => {
-    this.setState({todos: [...this.state.todos, todo]});
-  }
-  
-  removeTodo = (id) => {
-    let newState = this.state.todos.filter(todo => todo.id !== id)
-    this.setState({todos: newState})
-  }
-
-  render() {
+const App = () => {
     return (
       <main className="App">
         <Header />
-        <FormBar updateTodo={this.updateTodo}/>
-        <ToDoContainer todos={this.state.todos} removeTodo={this.removeTodo}/>
+        <FormBar />
+        <ToDoContainer />
       </main>
     );
-  }
-}
-
-const mapDispatchToProps = () => {
-
-}
-const mapStateToProps = () => {
-
 }
 
 export default App;
