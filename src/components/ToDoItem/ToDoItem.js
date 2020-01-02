@@ -17,11 +17,11 @@ const ToDoItem = ({text, id, removeTodo, todos}) => {
 
 const mapDispatchToProps = dispatch => ({
   removeTodo: (id, todos) => dispatch( removeTodo(id, todos) )
-})
+});
 
 const mapStateToProps = state => ({
   todos: state.todos,
   removeTodo: state.removeTodo
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ToDoItem);

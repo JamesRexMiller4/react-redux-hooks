@@ -43,10 +43,6 @@ class Form extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
   addTodo: todo => dispatch( addTodo(todo) )
-})
-
-const mapStateToProps = () => {
-  
-}
+});
 
 export default connect(null, mapDispatchToProps)(Form);

@@ -12,6 +12,7 @@ const ToDoContainer = ({todos, removeTodo}) => {
       removeTodo={removeTodo}
     />
   })
+  
   return (
     <div className="todo-container">
       {todoList}
@@ -21,6 +22,6 @@ const ToDoContainer = ({todos, removeTodo}) => {
 
 const mapStateToProps = (state) => ({
   todos: state.todos
-})
+});
 
 export default connect(mapStateToProps)(ToDoContainer);
