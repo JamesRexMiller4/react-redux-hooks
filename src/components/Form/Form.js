@@ -7,12 +7,26 @@ class Form extends Component {
       todo: ''
     }
   }
+
+  handleChange = (e) => {
+    e.target.name === 'todo' && this.setState({todo: e.target.value})
+    console.log(this.state)
+  }
+
+  handleSubmit = (e) => {
+    console.log(e.target)
+    if (e.target.id === 'button') {
+      let todo = this.state.todo
+      this.props.updateTodo(todo)
+    }
+  }
+
   render() {
     return(
       <form>
-        <input type='text' placeholder='Enter new ToDo'>
+        <input id='input' type='text' name='todo' placeholder='Enter new ToDo' onChange={this.handleChange}>
         </input>
-        <button>➤</button>
+        <button id='button' type='button' onClick={(e) => this.handleSubmit(e)}>➤</button>
       </form>
     )
   }

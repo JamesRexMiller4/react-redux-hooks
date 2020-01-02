@@ -11,11 +11,18 @@ class App extends Component {
       todos: ['Buy Groceries', 'Practice React', 'Drink more Coffee']
     }
   }
+
+  updateTodo = (todo) => {
+    this.setState({todos: [...this.state.todos, todo]})
+  }
+  
+
+
   render() {
     return (
       <body className="App">
         <Header />
-        <Form />
+        <Form updateTodo={this.updateTodo}/>
         <ToDoContainer todos={this.state.todos}/>
       </body>
     );
