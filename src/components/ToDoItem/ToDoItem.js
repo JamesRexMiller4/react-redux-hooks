@@ -8,7 +8,7 @@ const ToDoItem = ({text, id, removeTodo}) => {
     <Card className='todo-item-div' id={id}>
       <h2 className='todo-item-title'>{text}</h2>
       <Button variant="info" className="button" type="button"
-      onClick={(e) => removeTodo(e)}><span role='img' aria-label='x'>❌</span></Button>
+      onClick={() => removeTodo(id)}><span role='img' aria-label='x'>❌</span></Button>
     </Card>
   )
 }

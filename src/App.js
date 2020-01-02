@@ -20,8 +20,8 @@ class App extends Component {
     this.setState({todos: [...this.state.todos, todo]});
   }
   
-  removeTodo = (e) => {
-    let newState = this.state.todos.filter(todo => todo.id != e.target.parentNode.id)
+  removeTodo = (id) => {
+    let newState = this.state.todos.filter(todo => todo.id !== id)
     this.setState({todos: newState})
   }
 
