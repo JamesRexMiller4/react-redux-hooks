@@ -9,23 +9,29 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      todos: ['Buy Groceries', 'Practice React', 'Drink more Coffee']
+      todos: [
+        {title:'Buy Groceries', id: 1},
+        {title:'Practice React', id:2},
+        {title:'Drink more Coffee', id:3}]
     }
   }
 
   updateTodo = (todo) => {
-    this.setState({todos: [...this.state.todos, todo]})
+    this.setState({todos: [...this.state.todos, todo]});
   }
   
-
+  removeTodo = (e) => {
+    let newState = this.state.todos.filter(todo => todo.id != e.target.parentNode.id)
+    this.setState({todos: newState})
+  }
 
   render() {
     return (
-      <body className="App">
+      <main className="App">
         <Header />
         <FormBar updateTodo={this.updateTodo}/>
-        <ToDoContainer todos={this.state.todos}/>
-      </body>
+        <ToDoContainer todos={this.state.todos} removeTodo={this.removeTodo}/>
+      </main>
     );
   }
 }

@@ -3,11 +3,12 @@ import './ToDoItem.scss';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button'
 
-const ToDoItem = ({text}) => {
+const ToDoItem = ({text, id, removeTodo}) => {
   return (
-    <Card className='todo-item-div'>
+    <Card className='todo-item-div' id={id}>
       <h2 className='todo-item-title'>{text}</h2>
-      <Button variant="info" className="button">❌</Button>
+      <Button variant="info" className="button" type="button"
+      onClick={(e) => removeTodo(e)}><span role='img' aria-label='x'>❌</span></Button>
     </Card>
   )
 }
