@@ -1,18 +1,17 @@
 import React, { useContext } from 'react';
 import ToDoItem from '../ToDoItem/ToDoItem';
-import { TodosContext } from '../../App';
+import { useStore } from '../../App';
 import Completed from '../../components/Completed/Completed';
 import './ToDoContainer.scss';
 
 const ToDoContainer = () => {
-  const todos = useContext(TodosContext);
+  const {state, dispatch } = useStore()
   let renderList;
-  console.log(todos)
 
-  if (todos.length < 1) {
+  if (state.length < 1) {
     renderList = <Completed />
   } else {
-    renderList = todos.map(todo => {
+    renderList = state.map(todo => {
       return <ToDoItem 
         text={todo.title} 
         key={todo.id}

@@ -1,4 +1,4 @@
-import React, { useState, createContext } from 'react';
+import React, { useReducer, createContext, useContext } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
@@ -11,11 +11,28 @@ const todosList = [
   {title: 'Drink more Coffee', id: 3}
 ];
 
+const reducer = (state = todosList, action = {}) => {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return [...state, {title: action.payload.title, id: action.payload.id}]
+    case 'REMOVE_TODO':
+      let newState = state.filter(id => id !== action.id)
+      return newState
+    default:
+      return state
+  }
+}
+
 export const TodosContext = createContext({title: 'Drink more Coffee', id: 3});
 
+export const useStore = () => useContext(TodosContext)
+
 const App = () => {
+  const [state, dispatch] = useReducer(reducer, todosList)
+  const value = { state, dispatch }
+
     return (
-      <TodosContext.Provider value={todosList}>
+      <TodosContext.Provider value={value}>
         <main className="App">
         <Header />
         <Form />
