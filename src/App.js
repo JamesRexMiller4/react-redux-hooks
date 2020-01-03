@@ -16,7 +16,7 @@ const reducer = (state = todosList, action = {}) => {
     case 'ADD_TODO':
       return [...state, {title: action.payload.title, id: action.payload.id}]
     case 'REMOVE_TODO':
-      let newState = state.filter(id => id !== action.id)
+      let newState = state.filter(todo => todo.id !== action.id)
       return newState
     default:
       return state

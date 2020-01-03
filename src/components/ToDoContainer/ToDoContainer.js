@@ -5,11 +5,13 @@ import Completed from '../../components/Completed/Completed';
 import './ToDoContainer.scss';
 
 const ToDoContainer = () => {
-  const {state, dispatch } = useStore()
+  const {state, dispatch } = useStore();
+
   let renderList;
 
   if (state.length < 1) {
     renderList = <Completed />
+    
   } else {
     renderList = state.map(todo => {
       return <ToDoItem 
