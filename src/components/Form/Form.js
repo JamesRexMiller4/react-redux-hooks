@@ -31,7 +31,7 @@ class Form extends Component {
     return(
       <form className='form'>
         <input id='input' className='todo-input' type='text' name='todo' 
-        placeholder='Enter new ToDo' onChange={this.handleChange}></input>
+        placeholder='Enter new ToDo' autocomplete='off' onChange={this.handleChange}></input>
         <Button id='button' variant='primary' type='button' 
         onClick={(e) => this.handleSubmit(e)}>➤</Button>
       </form>
