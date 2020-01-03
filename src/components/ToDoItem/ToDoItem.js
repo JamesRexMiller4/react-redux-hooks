@@ -1,8 +1,6 @@
 import React from 'react';
 import './ToDoItem.scss';
 import Card from 'react-bootstrap/Card';
-import { connect } from 'react-redux';
-import { removeTodo } from '../../actions';
 import Button from 'react-bootstrap/Button';
 
 const ToDoItem = ({text, id, removeTodo, todos}) => {
@@ -15,13 +13,4 @@ const ToDoItem = ({text, id, removeTodo, todos}) => {
   )
 }
 
-const mapDispatchToProps = dispatch => ({
-  removeTodo: (id, todos) => dispatch( removeTodo(id, todos) )
-});
-
-const mapStateToProps = state => ({
-  todos: state.todos,
-  removeTodo: state.removeTodo
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(ToDoItem);
+export default ToDoItem;
