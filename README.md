@@ -1,68 +1,19 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Overview 
 
-## Available Scripts
+This is a personal project where I set out to practice refurbishing a React App, in this case a ToDo List, that was initially created using class based components and prop drilling to manage and update state, to utilize Redux. Then after successfully implementing Redux by connecting my components to the store, converting formerly class components into functional components, and reorganzing my file architecture to utilize the Redux conventions of containers, actions, and reducers, I DELETED ALL OF IT and refurbished the project again to use the React Hooks API! This time I around I undid a lot of the file architecture that Redux relies on, and moved all of my components back into the components folder and deleted out the containers, actions, and reducers files entirely. Through the use of useState, useContext, and useReducer I was able to reimplement the same functionality into my ToDo app, and converted all of my components into functional components. 
 
-In the project directory, you can run:
+I was excited to get the hooks functionality working, as some resources I read mentioned that hooks will not be able to completely replace Redux. If anything they are tools that will work nicely together. For instance, with a ToDo App that has a Form which generally requires local state to handle input changes, a base React or Redux application requires that that Form component be class based. Or requires that the Form be dispatching its changes up to the store, to pull them back down again, which is not particularly useful since only the Form will be utilizing that portion of the store. Insert hooks! The useState hook simplifies this process considerably, and allows for the Form component to be functional. As I get more and more familiar with hooks and with Redux, I am sure there will be more rules of thumb when one is preferential over the other. The Redux devtools are extrememly useful when requiring 'time-travel' capabilites and debugging, though I found the React Dev Tools to be just as useful with hooks implemented, though the time-travel feature had been lost. 
 
-### `npm start`
+Future iterations: I created test files but did not write any tests, so I think that will be a good exercise as well to see how testing evolves alongside the various implementations. 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## SEE FOR YOURSELF 
 
-### `npm test`
+If you are interested in exploring this application I would recommend cloning down a copy into a local repository and 
+``` npm install``` so that you have access to all the react and redux dependencies required for the application to run properly. Then you can run   ```npm start``` to launch a local server in your broswer window and see the application in action.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The master branch was the original starting point, so that will be where you see the more 'traditional' ToDo List implementation. By running ```git fetch``` in the terminal, you should then be able to access the other two feature branches : 'redux' and 'hooks' and be able to see the differences in the file structure, the size of each component, and how state is being passed across the components and managed globally. To switch to those branches run ```git checkout <nameOfBranch>```
 
-### `npm run build`
+Thanks for stopping by and if you have any questions or suggestions on how to better implement you can connect with me via Twitter: @JamesRexMiller4 or by submitting an issue to the repo. 
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Happy Coding!
