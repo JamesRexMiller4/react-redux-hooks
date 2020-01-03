@@ -1,21 +1,18 @@
-import React, { useState, createContext} from 'react';
+import React, { useContext } from 'react';
 import ToDoItem from '../ToDoItem/ToDoItem';
+import { TodosContext } from '../../App';
 import Completed from '../../components/Completed/Completed';
 import './ToDoContainer.scss';
 
-const initialToDoList = [
-  {title: 'Get Groceries', id: 1},
-  {title: 'Practice React', id: 2},
-  {title: 'Drink more Coffee', id: 3}
-]
 const ToDoContainer = () => {
-  const [todoList, setToDoList] =  useState(initialToDoList)
+  const todos = useContext(TodosContext);
   let renderList;
+  console.log(todos)
 
-  if (todoList.length < 1) {
+  if (todos.length < 1) {
     renderList = <Completed />
   } else {
-    renderList = todoList.map(todo => {
+    renderList = todos.map(todo => {
       return <ToDoItem 
         text={todo.title} 
         key={todo.id}
@@ -30,9 +27,5 @@ const ToDoContainer = () => {
     </div>
   )
 }
-
-const mapStateToProps = (state) => ({
-  todos: state.todos
-});
 
 export default ToDoContainer;

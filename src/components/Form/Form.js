@@ -1,21 +1,22 @@
 import React, { useState, useContext } from 'react';
 import './Form.scss';
+import TodosContext from '../../App';
 import Button from 'react-bootstrap/Button';
 
 const Form = () => {
   const [todo, setToDo] = useState('');
-  const [todoList, setToDoList] = useState();
+  const todos = useContext(TodosContext);
 
-  function generateRandomInt() {
+  const generateRandomInt = () => {
     return Math.floor(Math.random() * 200)
   }
 
-  function handleChange(e) {
+  const handleChange = (e) => {
     setToDo(e.target.value);
   }
 
-  function handleSubmit(e) {
-    setToDoList([...todoList, todo])
+  const handleSubmit = (e) => {
+    // setToDoList([...todos, todo])
   }
   
   return(

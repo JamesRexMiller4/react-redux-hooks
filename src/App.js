@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useState, createContext } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header/Header';
-import FormBar from './components/Form/Form';
+import Form from './components/Form/Form';
 import ToDoContainer from './components/ToDoContainer/ToDoContainer';
+
+const todosList = [
+  {title: 'Get Groceries', id: 1},
+  {title: 'Practice React', id: 2},
+  {title: 'Drink more Coffee', id: 3}
+];
+
+export const TodosContext = createContext({title: 'Drink more Coffee', id: 3});
 
 const App = () => {
     return (
-      <main className="App">
+      <TodosContext.Provider value={todosList}>
+        <main className="App">
         <Header />
-        <FormBar />
+        <Form />
         <ToDoContainer />
-      </main>
+        </main>
+      </TodosContext.Provider>
     );
 }
 
