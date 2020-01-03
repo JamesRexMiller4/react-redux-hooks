@@ -6,6 +6,15 @@ I was excited to get the hooks functionality working, as some resources I read m
 
 Future iterations: I created test files but did not write any tests, so I think that will be a good exercise as well to see how testing evolves alongside the various implementations. 
 
+## APPLICATION IN ACTION 
+
+#### Add ToDos
+![2020-01-03 09 28 33](https://user-images.githubusercontent.com/27719824/71735438-aff7ec00-2e0b-11ea-8045-ee773c0a3376.gif)
+
+#### Remove ToDos 
+
+![2020-01-03 09 29 13](https://user-images.githubusercontent.com/27719824/71735399-96ef3b00-2e0b-11ea-81a2-920fc64f3c25.gif)
+
 
 ## SEE FOR YOURSELF 
 
