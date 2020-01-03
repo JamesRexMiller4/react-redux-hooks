@@ -6,7 +6,7 @@ import Form from './components/Form/Form';
 import ToDoContainer from './components/ToDoContainer/ToDoContainer';
 
 const todosList = [
-  {title: 'Get Groceries', id: 1},
+  {title: 'Buy Groceries', id: 1},
   {title: 'Practice React', id: 2},
   {title: 'Drink more Coffee', id: 3}
 ];
